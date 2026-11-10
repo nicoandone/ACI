@@ -110,6 +110,12 @@ Vor fi prezentate exemple reprezentative in care metodele functioneaza corect sa
 - JSON
 - Matplotlib / Pandas
 
+## Dependente
+- datasets
+- pillow
+- opencv-python
+- pyyaml
+
 ## Posibile imbunatatiri proprii
 
 - Imbunatatirea pipeline-ului pentru date cu o calitate mai joasa
@@ -131,3 +137,12 @@ Vor fi prezentate exemple reprezentative in care metodele functioneaza corect sa
 - Rosenfeld, A., & Pfaltz, J. L. (1966). Sequential operations in digital picture processing. *Journal of the ACM*, *13*(4), 471–494. [https://www.cs.virginia.edu/~jlp/66.sequential.op.pdf](https://www.cs.virginia.edu/~jlp/66.sequential.op.pdf)
 - Wong, K. Y., Casey, R. G., & Wahl, F. M. (1982). Document analysis system. *IBM Journal of Research and Development*, *26*(6), 647–656. [https://mirrors.meulie.net/bitsavers.org/pdf/ibm/IBM_Journal_of_Research_and_Development/266/ibmrd2606B.pdf](https://mirrors.meulie.net/bitsavers.org/pdf/ibm/IBM_Journal_of_Research_and_Development/266/ibmrd2606B.pdf)
 - Zhong, X., Tang, J., & Jimeno Yepes, A. (2019). PubLayNet: Largest dataset ever for document layout analysis. In *2019 International Conference on Document Analysis and Recognition (ICDAR)* (pp. 1015–1022). IEEE. [https://doi.org/10.1109/ICDAR.2019.00166](https://doi.org/10.1109/ICDAR.2019.00166)
+
+
+## Sprint 1 note
+### Preprocesare
+- optiuni de noise filtering: median, gaussian, none.
+- optiuni de noise filtering prin operatii morfologice: opening, line_opening, none. Metoda de line opening aplica doua operatii de opening separate pe aceeasi imagine binara, una cu un kernel orizontal si una cu un kernel vertical, apoi combina rezultatele prin bitwise-or. Aceasta metoda a fost introdusa deoarece metoda de opening cu un kernel patrat s-a dovedit a fi prea agresiva.
+- va fi evaluata acuratetea cu vs fara noise filtering
+- asteptarile sunt ca noise filtering nu va imbunatati acuratetea pentru acest dataset, deoarece imaginile au deja o calitate inalta.
+- valorile parametrilor folositi in noise filtering depind de marimea textului

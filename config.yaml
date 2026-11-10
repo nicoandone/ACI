@@ -1,0 +1,7 @@
+preprocessing:
+  input: data/publaynet/images
+  output: outputs/preprocessed
+  filter: median # median | gaussian | none
+  filter_size: 5 # positive and odd
+  morph_cleanup: opening # opening | line_opening | none
+  morph_size: 4
